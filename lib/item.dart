@@ -11,6 +11,16 @@ class Item with ChangeNotifier {
     _cartCount = value;
   }
 
+  String get price => "${getPrice().toString()} ₺";
+
+  int getPrice() {
+    int price = 0;
+    for (var i = 0; i < basket!.length; i++) {
+      price += int.parse(basket![i]["price"].toString());
+    }
+    return price;
+  }
+
   List? basket = [];
 
   void addBasket(Object value) {
