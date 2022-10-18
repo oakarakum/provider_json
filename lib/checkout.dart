@@ -17,7 +17,8 @@ class _CheckoutState extends State<Checkout> {
   Widget build(BuildContext context) {
     return Consumer(builder: ((context, Item item, widget) {
       return Scaffold(
-        appBar: AppBar(title: Text("Sepetteki Ürün | ${item.cartCounts} | ")),
+        appBar:
+            AppBar(title: Text("Sepetteki Ürün | ${item.basket!.length} | ")),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
