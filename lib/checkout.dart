@@ -16,14 +16,20 @@ class _CheckoutState extends State<Checkout> {
   @override
   Widget build(BuildContext context) {
     return Consumer(builder: ((context, Item item, widget) {
-      item.price = "${item.getPrice().toString()} TL";
       return Scaffold(
           appBar:
               AppBar(title: Text("Sepetteki Ürün | ${item.basket!.length} | ")),
           body: Stack(
             children: [
               item.basket!.isEmpty
-                  ? Text("Sepetiniz Boş")
+                  ? Center(
+                      child: Text(
+                      "Sepetiniz Boş",
+                      style: TextStyle(
+                          color: Colors.orange,
+                          fontSize: 31,
+                          fontWeight: FontWeight.bold),
+                    ))
                   : ListView.builder(
                       itemCount: item.basket!.length,
                       itemBuilder: (context, index) {

@@ -96,8 +96,11 @@ class _ProductsScreenState extends State<ProductsScreen> {
                           ),
                           SizedBox(width: 2.w),
                           Text(
-                            "${item.productList![index]["price"]}",
-                            style: TextStyle(color: Colors.white),
+                            "${item.productList![index]["price"]} ₺",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
                           ),
                           GestureDetector(
                             onTap: () {
